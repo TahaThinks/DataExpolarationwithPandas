@@ -17,3 +17,5 @@ print(f"Number of Columns: {df.shape[1]}")
 # Are there any missing values in our dataframe? Does our dataframe contain any bad data?
 print(df.isna())
 
+# Create new Data Frame without Null Values
+clean_df = df.dropna()
