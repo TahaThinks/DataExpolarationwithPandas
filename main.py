@@ -32,3 +32,9 @@ print(f"Highest Starting Salary: {highest_starting_salary}")
 
 highest_starting_salary_row = clean_df["Starting Median Salary"].idxmax()
 print(highest_starting_salary_row)
+
+highest_starting_salary_major = clean_df["Undergraduate Major"].loc[highest_starting_salary_row]
+print(highest_starting_salary_major)
+
+print(clean_df.loc[43])
+
