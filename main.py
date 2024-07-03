@@ -68,3 +68,6 @@ print(clean_df.head())
 low_risk_jobs = clean_df.sort_values("Spread", ascending=True)
 print(low_risk_jobs[["Undergraduate Major", "Spread"]].head())
 
+
+highest_jobs = clean_df.sort_values(by="Mid-Career 90th Percentile Salary", ascending=False)
+print(highest_jobs.head())
