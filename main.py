@@ -40,28 +40,31 @@ clean_df = df.dropna()
 #
 
 # What college major has the highest mid-career salary?
-highest_mid_career_salary_id = clean_df["Mid-Career Median Salary"].idxmax()
-print(clean_df["Undergraduate Major"].loc[highest_mid_career_salary_id])
-# How much do graduates with this major earn? (Mid-career is defined as having 10+ years of experience).
-print(clean_df["Mid-Career Median Salary"].loc[highest_mid_career_salary_id])
-
-
-# Which college major has the lowest starting salary and
-lowest_starting_career_salary_id = clean_df["Starting Median Salary"].idxmin()
-print(clean_df["Undergraduate Major"].loc[lowest_starting_career_salary_id])
-# how much do graduates earn after university?
-print(clean_df["Mid-Career Median Salary"].loc[lowest_starting_career_salary_id])
+# highest_mid_career_salary_id = clean_df["Mid-Career Median Salary"].idxmax()
+# print(clean_df["Undergraduate Major"].loc[highest_mid_career_salary_id])
+# # How much do graduates with this major earn? (Mid-career is defined as having 10+ years of experience).
+# print(clean_df["Mid-Career Median Salary"].loc[highest_mid_career_salary_id])
+#
+#
+# # Which college major has the lowest starting salary and
+# lowest_starting_career_salary_id = clean_df["Starting Median Salary"].idxmin()
+# print(clean_df["Undergraduate Major"].loc[lowest_starting_career_salary_id])
+# # how much do graduates earn after university?
+# print(clean_df["Mid-Career Median Salary"].loc[lowest_starting_career_salary_id])
 # Which college major has the lowest mid-career salary and
 # how much can people expect to earn with this degree?
-lowest_mid_career_salary_id = clean_df["Mid-Career Median Salary"].idxmin()
-print(clean_df["Undergraduate Major"].loc[lowest_mid_career_salary_id])
-print(clean_df["Starting Median Salary"].loc[lowest_mid_career_salary_id])
-print(clean_df["Mid-Career Median Salary"].loc[lowest_mid_career_salary_id])
-print(clean_df["Mid-Career 10th Percentile Salary"].loc[lowest_mid_career_salary_id])
-print(clean_df["Mid-Career 90th Percentile Salary"].loc[lowest_mid_career_salary_id])
+# lowest_mid_career_salary_id = clean_df["Mid-Career Median Salary"].idxmin()
+# print(clean_df["Undergraduate Major"].loc[lowest_mid_career_salary_id])
+# print(clean_df["Starting Median Salary"].loc[lowest_mid_career_salary_id])
+# print(clean_df["Mid-Career Median Salary"].loc[lowest_mid_career_salary_id])
+# print(clean_df["Mid-Career 10th Percentile Salary"].loc[lowest_mid_career_salary_id])
+# print(clean_df["Mid-Career 90th Percentile Salary"].loc[lowest_mid_career_salary_id])
 
 
 #Get Spread of Mid-Career 10th Percentile Salary & Mid-Career 90th Percentile Salary:
 spread_col = clean_df["Mid-Career 90th Percentile Salary"] - clean_df["Mid-Career 10th Percentile Salary"]
 clean_df.insert(1,"Spread",spread_col)
 print(clean_df.head())
+low_risk_jobs = clean_df.sort_values("Spread", ascending=True)
+print(low_risk_jobs[["Undergraduate Major", "Spread"]].head())
+
