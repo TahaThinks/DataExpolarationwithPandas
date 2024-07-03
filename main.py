@@ -29,3 +29,6 @@ clean_df = df.dropna()
 # Group
 highest_starting_salary = clean_df["Starting Median Salary"].max()
 print(f"Highest Starting Salary: {highest_starting_salary}")
+
+highest_starting_salary_row = clean_df["Starting Median Salary"].idxmax()
+print(highest_starting_salary_row)
