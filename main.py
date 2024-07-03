@@ -61,7 +61,7 @@ print(clean_df["Mid-Career 10th Percentile Salary"].loc[lowest_mid_career_salary
 print(clean_df["Mid-Career 90th Percentile Salary"].loc[lowest_mid_career_salary_id])
 
 
-# Starting Median Salary
-# Mid-Career Median Salary
-# Mid-Career 10th Percentile Salary
-# Mid-Career 90th Percentile Salary
+#Get Spread of Mid-Career 10th Percentile Salary & Mid-Career 90th Percentile Salary:
+spread_col = clean_df["Mid-Career 90th Percentile Salary"] - clean_df["Mid-Career 10th Percentile Salary"]
+clean_df.insert(1,"Spread",spread_col)
+print(clean_df.head())
