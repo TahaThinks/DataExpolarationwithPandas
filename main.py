@@ -64,13 +64,16 @@ clean_df = df.dropna()
 #Get Spread of Mid-Career 10th Percentile Salary & Mid-Career 90th Percentile Salary:
 spread_col = clean_df["Mid-Career 90th Percentile Salary"] - clean_df["Mid-Career 10th Percentile Salary"]
 clean_df.insert(1,"Spread",spread_col)
-print(clean_df.head())
+# print(clean_df.head())
 low_risk_jobs = clean_df.sort_values("Spread", ascending=True)
-print(low_risk_jobs[["Undergraduate Major", "Spread"]].head())
+# print(low_risk_jobs[["Undergraduate Major", "Spread"]].head())
 
 
 highest_jobs = clean_df.sort_values(by="Mid-Career 90th Percentile Salary", ascending=False)
-print(highest_jobs.head())
+# print(highest_jobs.head())
 
 high_risk_jobs = clean_df.sort_values("Spread", ascending=False)
-print(high_risk_jobs[["Undergraduate Major", "Spread"]].head())
+# print(high_risk_jobs[["Undergraduate Major", "Spread"]].head())
+
+#Group rows by Group
+print(clean_df.groupby('Group').count())
