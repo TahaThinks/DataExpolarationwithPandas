@@ -6,6 +6,8 @@ df = pd.read_csv('sample_data/salaries_by_college_major.csv')
 # Setting the max n rows and columns to be printed
 # pd.options.display.max_columns = None
 # pd.options.display.max_rows = None
+pd.options.display.float_format = '{:,.2f}'.format
+
 
 # How many rows & columns does the dataframe have?
 print(f"Number of Rows: {df.shape[0]}")
