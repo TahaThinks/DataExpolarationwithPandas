@@ -76,4 +76,8 @@ high_risk_jobs = clean_df.sort_values("Spread", ascending=False)
 # print(high_risk_jobs[["Undergraduate Major", "Spread"]].head())
 
 #Group rows by Group
-print(clean_df.groupby('Group').count())
+# print(clean_df.groupby('Group').count())
+
+# Get Average of the GRoup
+numeric_columns = ['Spread', 'Starting Median Salary', 'Mid-Career Median Salary', 'Mid-Career 10th Percentile Salary', 'Mid-Career 90th Percentile Salary']
+print(clean_df.groupby('Group')[numeric_columns].mean())
